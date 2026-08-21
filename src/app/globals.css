@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-pretendard), "Apple SD Gothic Neo", sans-serif;
+  --font-heading: var(--font-display), "Noto Serif KR", Georgia, serif;
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-wood: var(--wood);
+  --color-ember: var(--ember);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 2.5);
+  --radius-4xl: calc(var(--radius) * 3);
+}
+
+:root {
+  /* Hotel lounge: warm ivory, espresso wood, champagne brass */
+  --cream: #f6f0e7;
+  --cream-deep: #ebe2d4;
+  --wood: #5c4636;
+  --ember: #b8976a;
+  --ink: #1c1612;
+  --ink-soft: #5a4c40;
+  --background: #f6f0e7;
+  --foreground: #1c1612;
+  --card: #fbf7f1;
+  --card-foreground: #1c1612;
+  --popover: #fbf7f1;
+  --popover-foreground: #1c1612;
+  --primary: #2a211a;
+  --primary-foreground: #f8f1e6;
+  --secondary: #eee5d7;
+  --secondary-foreground: #2a211a;
+  --muted: #ebe2d4;
+  --muted-foreground: #6d5e52;
+  --accent: #b8976a;
+  --accent-foreground: #1c1612;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d9cdbc;
+  --input: #d9cdbc;
+  --ring: #b8976a;
+  --chart-1: #b8976a;
+  --chart-2: #5c4636;
+  --chart-3: #2a211a;
+  --chart-4: #cbb892;
+  --chart-5: #eee5d7;
+  --radius: 0.2rem;
+  --sidebar: #fbf7f1;
+  --sidebar-foreground: #1c1612;
+  --sidebar-primary: #2a211a;
+  --sidebar-primary-foreground: #f8f1e6;
+  --sidebar-accent: #eee5d7;
+  --sidebar-accent-foreground: #2a211a;
+  --sidebar-border: #d9cdbc;
+  --sidebar-ring: #b8976a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-color: var(--cream);
+    background-image:
+      radial-gradient(
+        ellipse 120% 80% at 50% -10%,
+        color-mix(in oklab, var(--ember) 14%, transparent),
+        transparent 55%
+      ),
+      linear-gradient(
+        165deg,
+        #f9f4ec 0%,
+        var(--cream) 42%,
+        var(--cream-deep) 100%
+      );
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    letter-spacing: -0.01em;
+    font-family: var(--font-heading);
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--ember) 32%, white);
+    color: var(--ink);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-pad {
+    @apply px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-y {
+    @apply py-16 sm:py-24 lg:py-28;
+  }
+
+  .glass-soft {
+    background: color-mix(in oklab, var(--cream) 92%, white);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
+
+  .panel {
+    @apply border border-border bg-card;
+  }
+
+  .rule {
+    @apply border-t border-border;
+  }
+}
