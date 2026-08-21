@@ -29,9 +29,9 @@ export function Location() {
           </p>
         </FadeUp>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-          <FadeUp className="overflow-hidden border border-border bg-card">
-            <div className="relative aspect-[4/3] w-full sm:aspect-[16/11]">
+        <div className="mt-12 grid gap-5 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
+          <FadeUp className="flex h-full min-h-[28rem] flex-col overflow-hidden border border-border bg-card">
+            <div className="relative min-h-[28rem] w-full flex-1">
               <Image
                 src="/images/place/hero.jpg"
                 alt="마이미라운지 내부"
@@ -60,7 +60,7 @@ export function Location() {
             </div>
           </FadeUp>
 
-          <FadeUp delay={0.08} className="border border-border bg-card p-6 sm:p-8">
+          <FadeUp delay={0.08} className="h-full border border-border bg-card p-6 sm:p-8">
             <h3 className="font-heading text-xl font-semibold text-ink">
               {site.fullName}
             </h3>

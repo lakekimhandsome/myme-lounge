@@ -27,7 +27,7 @@ const siteUrl = process.env.PAGES_ORIGIN
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   icons: {
-    icon: "/favicon.svg",
+    icon: `${process.env.PAGES_BASE_PATH ?? ""}/favicon.svg`,
   },
   title: {
     default: "마이미라운지 MY · ME LOUNGE | 상수·홍대 라운지 카페",
