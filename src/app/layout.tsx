@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.PAGES_BASE_PATH
-  ? `https://lakekimhandsome.github.io${process.env.PAGES_BASE_PATH}`
+const siteUrl = process.env.PAGES_ORIGIN
+  ? `${process.env.PAGES_ORIGIN}${process.env.PAGES_BASE_PATH ?? ""}`
   : "http://localhost:3000";
 
 export const metadata: Metadata = {
